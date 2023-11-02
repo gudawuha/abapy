@@ -171,9 +171,6 @@ for k, v in mon.items():
 for i in range(myframeNO):
 	ws.write(i+2, 0, time[i])
 	ws.write(i+2, 1, xarray[i])
-#wb.filename = 'lianliang2.xlsm'
-#wb.add_vba_project('C:/Temp/vbaProject.bin')
-#chart = wb.add_chart({'type':'scatter'})
 leaf = dgo.Leaf(leafType=DEFAULT_MODEL)
 session.viewports['Viewport: 1'].odbDisplay.displayGroup.replace(leaf=leaf)
 session.viewports['Viewport: 1'].odbDisplay.setValues(viewCutNames = ('Z-Plane',), viewCut = ON)
