@@ -130,6 +130,11 @@ ws.write(1, 10, 0.4)
 ws.write(1, 11, 0.6)
 ws.write(1, 12, 0.8)
 ws.write(1, 13, 1)
+RootPath = 'Post-' + mname[0:-4]
+RootPath = os.path.abspath(RootPath)
+if not os.path.exists(RootPath):
+    os.makedirs(RootPath)
+os.chdir(RootPath) 
 leaf = dgo.LeafFromElementSets(elementSets=('LIANLIANGCZ', ))
 session.viewports['Viewport: 1'].odbDisplay.displayGroup.replace(leaf=leaf)
 session.viewports['Viewport: 1'].odbDisplay.setValues(viewCutNames = ('X-Plane',), viewCut = ON)
