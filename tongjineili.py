@@ -95,8 +95,7 @@ stepseis = odb.steps.values()[-1]
 time=[0 for i in myframeNO1]
 ux=0
 uxx=0
-t = odb.name
-tt = list(t)
+tt = list(mname)
 tt[-1] = 's'
 tt[-2] = 'l'
 tt[-3] = 'x'
@@ -200,3 +199,5 @@ chart1.add_series({
 })
 ws.insert_chart('U28',chart1,{'x_offset':20,'y_offset':5})
 wb.close()
+rpath=os.path.dirname(RootPath)
+os.chdir(rpath)
