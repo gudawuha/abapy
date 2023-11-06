@@ -3,10 +3,8 @@ from abaqus import *
 from odbAccess import *
 from abaqusConstants import *
 from viewerModules import *
-import __main__
-import displayGroupMdbToolset as dgm
 import displayGroupOdbToolset as dgo
-import os, glob
+import os
 
 mname = getInput('odb:' )
 odb=openOdb(path=mname, readOnly=True)
@@ -34,7 +32,7 @@ for i in range(0,9):
 	session.viewports[session.currentViewportName].odbDisplay.setFrame(
 	step='Step-2', frame=8*i)
 	session.printOptions.setValues(rendition=COLOR,
-	vpDecorations=OFF, vpBackground=OFF)
+	vpDecorations=OFF, vpBackground=OFF, reduceColors=False)
 	session.pngOptions.setValues(imageSize=(4096, 4096))
 	session.printToFile(fileName="DAMAGEC% sframe=%s, time=%s" % (mname[0:-4], 8*i, i), format=PNG, canvasObjects=(viewPort,))
 session.viewports['Viewport: 1'].view.setValues(session.views['Bottom'])
@@ -49,7 +47,7 @@ for i in range(0,9):
 	session.viewports[session.currentViewportName].odbDisplay.setFrame(
 	step='Step-2', frame=8*i)
 	session.printOptions.setValues(rendition=COLOR,
-	vpDecorations=OFF, vpBackground=OFF)
+	vpDecorations=OFF, vpBackground=OFF, reduceColors=False)
 	session.pngOptions.setValues(imageSize=(4096, 4096))
 	session.printToFile(fileName="S% sframe=%s, time=%s" % (mname[0:-4], 8*i, i), format=PNG, canvasObjects=(viewPort,))
 session.viewports['Viewport: 1'].view.setValues(session.views['Bottom'])
@@ -64,6 +62,6 @@ for i in range(0,9):
 	session.viewports[session.currentViewportName].odbDisplay.setFrame(
 	step='Step-2', frame=8*i)
 	session.printOptions.setValues(rendition=COLOR,
-	vpDecorations=OFF, vpBackground=OFF)
+	vpDecorations=OFF, vpBackground=OFF, reduceColors=False)
 	session.pngOptions.setValues(imageSize=(4096, 4096))
 	session.printToFile(fileName="PE% sframe=%s, time=%s" % (mname[0:-4], 8*i, i), format=PNG, canvasObjects=(viewPort,))
